@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marketplace</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🛒 NSS Marketplace</h2>
+
+    <div>
+        {% if user.is_authenticated %}
+            Welcome, {{ user.username }} |
+            <a href="{% url 'logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </div>
+</div>
+
+<div class="container">
+    <h1>Available Items</h1>
+    <br>
+
+    <div class="items-grid">
+        {% for item in items %}
+            <div class="card">
+                {% if item.image %}
+                    <img src="{{ item.image.url }}">
+                {% endif %}
+
+                <h3>{{ item.title }}</h3>
+                <p class="price">GH₵ {{ item.price }}</p>
+
+                <a href="{% url 'item_detail' item.pk %}" class="btn">
+                    View Item
+                </a>
+            </div>
+        {% empty %}
+            <p>No items available.</p>
+        {% endfor %}
+    </div>
+</div>
+
+</body>
+</html>

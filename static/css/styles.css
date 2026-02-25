@@ -1,0 +1,132 @@
+/* ===============================
+   GENERAL STYLES
+================================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #f4f6f9;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+/* ===============================
+   NAVBAR
+================================= */
+
+.navbar {
+    background-color: #1e3a8a;
+    padding: 15px 30px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* ===============================
+   CONTAINER
+================================= */
+
+.container {
+    padding: 30px;
+}
+
+/* ===============================
+   ITEM GRID (4 per row)
+================================= */
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* ===============================
+   CARD STYLE
+================================= */
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 15px;
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.card h3 {
+    margin: 10px 0 5px 0;
+}
+
+.price {
+    color: #16a34a;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* ===============================
+   BUTTON
+================================= */
+
+.btn {
+    display: inline-block;
+    padding: 8px 14px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* ===============================
+   DETAIL PAGE
+================================= */
+
+.detail-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.detail-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.detail-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}

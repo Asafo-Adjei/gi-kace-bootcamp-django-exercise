@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ item.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🛒 NSS Marketplace</h2>
+    <a href="{% url 'item_list' %}">Home</a>
+</div>
+
+<div class="container">
+
+    <div class="detail-card">
+        {% if item.image %}
+            <img src="{{ item.image.url }}">
+        {% endif %}
+
+        <h1>{{ item.title }}</h1>
+
+        <div class="detail-info">
+            <p><strong>Price:</strong> GH₵ {{ item.price }}</p>
+            <p><strong>Description:</strong> {{ item.description }}</p>
+            <p><strong>Owner:</strong> {{ item.owner.username }}</p>
+            <p><strong>Phone:</strong> {{ item.phone_number }}</p>
+        </div>
+
+        <br>
+        <a href="{% url 'item_list' %}" class="btn">Back to Marketplace</a>
+    </div>
+
+</div>
+
+</body>
+</html>
